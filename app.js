@@ -5,13 +5,12 @@ var dash = angular.module('dash', [])
 
     $interval(function() {
         Sys.update();
-    }, 500)
+    }, 1000);
 
 })
 .service("Sys", function($http) {
-    this.data = {
-        "cpu_temp": 0
-    }
+    this.data = {};
+
     var data = this.data;
 
     this.cpu_temp = function () {
@@ -20,9 +19,16 @@ var dash = angular.module('dash', [])
         })
     }
 
+    this.mem_info = function () {
+        $http.post("/api/mem_info.php").then(function(response) {
+            data.mem_info = response.data;
+        })
+    }
+
     this.update = function () {
         if (focused) {
             this.cpu_temp();
+            this.mem_info();
         }
     }
 })

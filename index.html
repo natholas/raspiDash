@@ -10,6 +10,9 @@
 
         <h1>Valhalla Dashboard</h1>
         CPU tempature:<br><h1 style="margin:0">{{sysData.cpu_temp | tempature}}</h1>
+        <br>
+        Memory usage:
+        {{((sysData.mem_info.free / sysData.mem_info.total) * 100).toFixed(2)}}%
 
     </body>
 </html>
