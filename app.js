@@ -27,6 +27,6 @@ var dash = angular.module('dash', [])
 
 .filter("tempature", function() {
     return function(temp) {
-        return (temp / 100).toFixed(1) + " °C";
+        return (temp / 1000).toFixed(1) + " °C";
     }
 })
