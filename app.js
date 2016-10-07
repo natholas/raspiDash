@@ -15,8 +15,8 @@ var dash = angular.module('dash', [])
     var data = this.data;
 
     this.cpu_temp = function () {
-        $http.post("/api/get_temp.php").then(function(response) {
-            data.temp = response.temp;
+        $http.post("/api/cpu_temp.php").then(function(response) {
+            data.cpu_temp = response.cpu_temp;
         })
     }
 
