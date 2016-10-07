@@ -21,7 +21,9 @@ var dash = angular.module('dash', [])
     }
 
     this.update = function () {
-        this.cpu_temp();
+        if (focused) {
+            this.cpu_temp();
+        }
     }
 })
 
@@ -30,3 +32,12 @@ var dash = angular.module('dash', [])
         return (temp / 1000).toFixed(1) + " °C";
     }
 })
+
+var focused = true;
+
+window.onfocus = function() {
+    focused = true;
+};
+window.onblur = function() {
+    focused = false;
+};
