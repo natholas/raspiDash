@@ -31,6 +31,8 @@ var dash = angular.module('dash', [])
             this.mem_info();
         }
     }
+
+    this.update();
 })
 
 .filter("tempature", function() {
