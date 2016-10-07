@@ -7,7 +7,9 @@
         <script src="app.js"></script>
     </head>
     <body ng-app="dash" ng-controller="dashCtrl">
-        CPU tempature: {{sysData.cpu_temp}}
+
+        <h1>Valhalla Dashboard</h1>
+        CPU tempature:<br><h1 style="margin:0">{{sysData.cpu_temp | tempature}}</h1>
 
     </body>
 </html>
