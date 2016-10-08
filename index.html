@@ -14,13 +14,28 @@
         </header>
         <wrapper>
             CPU tempature:
-            <h1>{{sysData.cpu_temp | tempature}}</h1>
+            <h1 ng-class="{
+                best: sysData.cpu_temp < 45000,
+                good: sysData.cpu_temp < 55000,
+                meh: sysData.cpu_temp < 65000,
+                bad: sysData.cpu_temp < 78000,
+            }" class="terrible">{{sysData.cpu_temp | tempature}}</h1>
             <hr>
             Memory usage:
-            <h1>{{((sysData.mem_info.used / sysData.mem_info.total) * 100).toFixed(2)}}%</h1>
+            <h1 ng-class="{
+                best: sysData.mem_info.used / sysData.mem_info.total < 0.3,
+                good: sysData.mem_info.used / sysData.mem_info.total < 0.5,
+                meh: sysData.mem_info.used / sysData.mem_info.total < 0.7,
+                bad: sysData.mem_info.used / sysData.mem_info.total < 0.8,
+            }" class="terrible">{{((sysData.mem_info.used / sysData.mem_info.total) * 100).toFixed(2)}}%</h1>
             <hr>
             Disk usage:
-            <h1>{{((sysData.disk_usage.used / sysData.disk_usage.total) * 100).toFixed(2)}}%</h1>
+            <h1 ng-class="{
+                best: sysData.disk_usage.used / sysData.disk_usage.total < 0.5,
+                good: sysData.disk_usage.used / sysData.disk_usage.total < 0.7,
+                meh: sysData.disk_usage.used / sysData.disk_usage.total < 0.8,
+                bad: sysData.disk_usage.used / sysData.disk_usage.total < 0.9,
+            }" class="terrible">{{((sysData.disk_usage.used / sysData.disk_usage.total) * 100).toFixed(2)}}%</h1>
             {{(sysData.disk_usage.used / 1000 / 1000).toFixed(0)}} GB / {{(sysData.disk_usage.total / 1000 / 1000).toFixed(0)}} GB used
         </wrapper>
     </body>

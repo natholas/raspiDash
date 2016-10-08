@@ -1,16 +1,42 @@
 body
 {
     font-family: sans-serif;
-    background-color: #ececec;
+    //background-color: #ececec;
     color: #555;
     margin: 0;
 }
 
 h1
 {
-    font-weight: normal;
+    //font-weight: normal;
     font-size: 3em;
     margin: 0;
+    //-webkit-text-stroke: 1px #555;
+}
+
+h1.terrible
+{
+    color: #F44336;
+}
+
+h1.bad
+{
+    color: #FFC107;
+}
+
+h1.meh
+{
+    color: #FFEB3B;
+}
+
+h1.good
+{
+    color: #CDDC39;
+}
+
+h1.best
+{
+    color: #8BC34A;
 }
 
 h2
