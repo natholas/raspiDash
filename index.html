@@ -2,21 +2,26 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
         <title>Valhalla Dashboard</title>
         <script src="angular.js"></script>
         <script src="app.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body ng-app="dash" ng-controller="dashCtrl">
-
-        <h1>Valhalla Dashboard</h1>
-        CPU tempature:
-        <h1 style="margin:0">{{sysData.cpu_temp | tempature}}</h1>
-        <br>
-        Memory usage:
-        <h1 style="margin:0">{{((sysData.mem_info.used / sysData.mem_info.total) * 100).toFixed(2)}}%</h1>
-        <br>
-        Disk usage:
-        <h1 style="margin:0">{{((sysData.disk_usage.used / sysData.disk_usage.total) * 100).toFixed(2)}}%</h1>
-        {{(sysData.disk_usage.used / 1000 / 1000).toFixed(0)}} GB / {{(sysData.disk_usage.total / 1000 / 1000).toFixed(0)}} GB used
+        <header>
+            <h2>Valhalla Dashboard</h2>
+        </header>
+        <wrapper>
+            CPU tempature:
+            <h1>{{sysData.cpu_temp | tempature}}</h1>
+            <hr>
+            Memory usage:
+            <h1>{{((sysData.mem_info.used / sysData.mem_info.total) * 100).toFixed(2)}}%</h1>
+            <hr>
+            Disk usage:
+            <h1>{{((sysData.disk_usage.used / sysData.disk_usage.total) * 100).toFixed(2)}}%</h1>
+            {{(sysData.disk_usage.used / 1000 / 1000).toFixed(0)}} GB / {{(sysData.disk_usage.total / 1000 / 1000).toFixed(0)}} GB used
+        </wrapper>
     </body>
 </html>

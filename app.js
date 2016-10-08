@@ -13,20 +13,23 @@ var dash = angular.module('dash', [])
 
     var data = this.data;
 
+    var url_base = "/api/";
+    if (window.location.hostname == "raspidash") url_base = "/test_api/";
+
     this.cpu_temp = function () {
-        $http.post("/api/cpu_temp.php").then(function(response) {
+        $http.post(url_base + "cpu_temp.php").then(function(response) {
             data.cpu_temp = response.data.cpu_temp;
         })
     }
 
     this.mem_info = function () {
-        $http.post("/api/mem_info.php").then(function(response) {
+        $http.post(url_base + "mem_info.php").then(function(response) {
             data.mem_info = response.data;
         })
     }
 
     this.disk_usage = function () {
-        $http.post("/api/disk_usage.php").then(function(response) {
+        $http.post(url_base + "disk_usage.php").then(function(response) {
             data.disk_usage = response.data;
         })
     }

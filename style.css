@@ -1,0 +1,45 @@
+body
+{
+    font-family: sans-serif;
+    background-color: #ececec;
+    color: #555;
+    margin: 0;
+}
+
+h1
+{
+    font-weight: normal;
+    font-size: 3em;
+    margin: 0;
+}
+
+h2
+{
+    margin: 0;
+    font-weight: normal;
+}
+
+wrapper
+{
+    display: block;
+    padding: 1em;
+    text-align: center;
+    padding-top: 18vh;
+    font-size: 1.5em;
+    max-width: 22em;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+header
+{
+    display: block;
+    background-color: #555;
+    color: #ececec;
+    padding: 1em;
+}
+
+hr
+{
+    margin: 2em 0;
+}
