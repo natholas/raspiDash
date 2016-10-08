@@ -25,9 +25,16 @@ var dash = angular.module('dash', [])
         })
     }
 
+    this.disk_usage = function () {
+        $http.post("/api/disk_usage.php").then(function(response) {
+            data.disk_usage = response.data;
+        })
+    }
+
     this.update = function () {
         if (focused) {
             this.cpu_temp();
+            this.disk_usage();
             this.mem_info();
         }
     }

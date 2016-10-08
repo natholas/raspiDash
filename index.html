@@ -9,10 +9,13 @@
     <body ng-app="dash" ng-controller="dashCtrl">
 
         <h1>Valhalla Dashboard</h1>
-        CPU tempature:<br><h1 style="margin:0">{{sysData.cpu_temp | tempature}}</h1>
+        CPU tempature:
+        <h1 style="margin:0">{{sysData.cpu_temp | tempature}}</h1>
         <br>
         Memory usage:
-        {{((sysData.mem_info.used / sysData.mem_info.total) * 100).toFixed(2)}}%
-
+        <h1>{{((sysData.mem_info.used / sysData.mem_info.total) * 100).toFixed(2)}}%</h1>
+        <br>
+        Disk usage:
+        <h1>{{((sysData.disk_usage.used / sysData.disk_usage.total) * 100).toFixed(2)}}%</h1>
     </body>
 </html>
