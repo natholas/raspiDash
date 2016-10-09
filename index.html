@@ -40,8 +40,8 @@
             {{(sysData.disk_usage.used / 1000 / 1000).toFixed(0)}} GB / {{(sysData.disk_usage.total / 1000 / 1000).toFixed(0)}} GB used
             <hr>
             Network usage:
-            <h1 ng-show="sysData.bps < 100000">{{sysData.bps / 1000}} KB/s</h1>
-            <h1 ng-show="sysData.bps >= 100000">{{sysData.bps / 1000 / 1000}} MB/s</h1>
+            <h1 ng-show="sysData.bps < 100000">{{((sysData.bps / 1000).toFixed(0))}} KB/s</h1>
+            <h1 ng-show="sysData.bps >= 100000">{{(sysData.bps / 1000 / 1000).toFixed(2)}} MB/s</h1>
         </wrapper>
     </body>
 </html>
