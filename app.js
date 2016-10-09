@@ -54,6 +54,7 @@ var dash = angular.module('dash', [])
             this.cpu_temp();
             this.disk_usage();
             this.mem_info();
+            this.network_check();
         }
     }
 
