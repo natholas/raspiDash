@@ -57,6 +57,7 @@ var dash = angular.module('dash', [])
             this.network_check();
         } else {
             delete data.bytes;
+            delete data.bps;
         }
     }
 
