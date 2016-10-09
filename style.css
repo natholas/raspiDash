@@ -63,9 +63,28 @@ header
     background-color: #555;
     color: #ececec;
     padding: 1em;
+    overflow: auto;
 }
 
 hr
 {
     margin: 2em 0;
+}
+
+header button
+{
+    float: right;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+header h2
+{
+    float: left;
+    margin-top: 0.3em;
 }

@@ -7,6 +7,8 @@ var dash = angular.module('dash', [])
         Sys.update();
     }, 1000);
 
+    $scope.reboot = Sys.reboot;
+
 })
 .service("Sys", function($http) {
     this.data = {};
@@ -15,6 +17,12 @@ var dash = angular.module('dash', [])
 
     var url_base = "/api/";
     if (window.location.hostname == "raspidash") url_base = "/test_api/";
+
+    this.reboot = function () {
+        $http.post(url_base + "reboot.php").then(function() {
+            alert("Valhalla rebooting in 60 seconds");
+        })
+    }
 
     this.cpu_temp = function () {
         $http.post(url_base + "cpu_temp.php").then(function(response) {
