@@ -38,6 +38,9 @@
                 bad: sysData.disk_usage.used / sysData.disk_usage.total < 0.9,
             }" class="terrible">{{((sysData.disk_usage.used / sysData.disk_usage.total) * 100).toFixed(2)}}%</h1>
             {{(sysData.disk_usage.used / 1000 / 1000).toFixed(0)}} GB / {{(sysData.disk_usage.total / 1000 / 1000).toFixed(0)}} GB used
+            <hr>
+            Network usage:
+            <h1>{{sysData.bps}}</h1>
         </wrapper>
     </body>
 </html>

@@ -24,6 +24,13 @@ var dash = angular.module('dash', [])
         })
     }
 
+    this.network_check = function () {
+        $http.post(url_base + "network_check.php").then(function(response) {
+            data.bps = response.data.bytes - data.bytes;
+            data.bytes = response.data.bytes;
+        })
+    }
+
     this.cpu_temp = function () {
         $http.post(url_base + "cpu_temp.php").then(function(response) {
             data.cpu_temp = response.data.cpu_temp;
