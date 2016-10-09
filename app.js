@@ -55,6 +55,9 @@ var dash = angular.module('dash', [])
             this.disk_usage();
             this.mem_info();
             this.network_check();
+        } else {
+            data.bytes = null;
+            data.bps = null;
         }
     }
 
